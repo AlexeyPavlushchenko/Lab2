@@ -16,11 +16,26 @@ double pi(double eps)
 
 void assert(double eps)
 {
-    cout << "OK";
+	const double PI = 3.14159265358979323846;
+	cout << "HELLO";
+	if (fabs(pi(eps) - PI) <= eps)
+	{
+		cout << "OK" << endl;
+	}
+	else
+	{
+		cout << "FAIL at eps " << eps << endl;
+	}
 }
 
 int main()
 {
-
-	system("pause"); 
+	assert(0.0000678);
+	assert(0.005);
+	assert(0.000345);
+	assert(0.00004);
+	assert(0.000053);
+	assert(0.000001);
+	assert(0.001);
+	system("pause");
 }
