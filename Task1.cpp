@@ -18,6 +18,12 @@ double sinus(double x, double e)
 	return res;
 
 }
+
+void test() 
+{
+    cout << "HELLO";
+}
+
 int main()
 {
 	double x,e;
