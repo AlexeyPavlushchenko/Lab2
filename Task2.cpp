@@ -17,6 +17,11 @@ int zero(int N)
 	return counter;
 }
 
+void test()
+{
+    cout << "Tests";
+}
+
 int main()
 {
 	int N;
