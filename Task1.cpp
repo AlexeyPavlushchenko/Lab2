@@ -1,10 +1,11 @@
-#include <iostream>;
+#include <iostream>
+#include <cmath>
 using namespace std;
 
 double sinus(double x, double e)
 {
 	bool check = true;
-	double temp = x; 
+	double temp = x;
 	double res = temp;
 	for (double i = 0; check == true ; i++)
 	{
@@ -19,16 +20,22 @@ double sinus(double x, double e)
 
 }
 
-void test() 
+void assert(double x , double eps)
 {
-    cout << "HELLO";
+	if (fabs(sin(x) - sinus(x, eps)) <= eps)
+		cout << "OK" << endl;
+	else
+		cout << "FAIL at " << x << " with eps " << eps << endl;
 }
 
-int main()
-{
-	double x,e;
-	cout << "Enter x and e" << endl;
-	cin >> x >> e;
-	cout << "sin(x) = " << sinus(x,e);
-	system ("pause");
+int main(){
+    assert(3.14159265358979, 0.1);
+	assert(1.57079632679, 0.001);
+	assert(0.523598775598, 0.000001);
+	assert(3.14159265358979, 0.0000001);
+	assert(2, 0.0002);
+	assert(-1, 0.000001);
+	assert(4.2, 0.00042);
+	
+	system("pause");
 }
